@@ -1,0 +1,13 @@
+﻿<Window x:Class="HeartRateBikeSpeedApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Heart Rate and Bike Speed" Height="175" Width="300">
+    <Grid>
+        <Label x:Name="heartRateLabel" Content="Heart Rate:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0"/>
+        <Label x:Name="bikeSpeedLabel" Content="Bike Speed:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0"/>
+
+        <Button x:Name="Button" Margin="199,102,10,10" Click="Button_Click">
+            Scenario 1
+        </Button>
+    </Grid>
+</Window>

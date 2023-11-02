@@ -1,0 +1,44 @@
+﻿<Window x:Class="Doctor.DataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Doctor"
+        mc:Ignorable="d"
+        Title="Chat" Height="650" Width="825">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <!--<ListBox d:ItemsSource="{Binding ClientIds}" Margin="0,0,-32,0" Name="lstbxClients" SelectionChanged="SelectionChanged"/>-->
+            <ListBox Name="lstbxClients" SelectionChanged="SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ClientId}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+
+        <Grid Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListView x:Name="ChatListView" Width="Auto" Height="Auto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding MessageText}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+            <TextBox Width="Auto" Height="26" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Name="TextBox"/>
+            <Button Height="28" Name="SendButton" Content="Send" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="67" Grid.Column="1"/>
+        </Grid>
+
+    </Grid>
+
+
+</Window>
